@@ -13,6 +13,19 @@ Tool for Pentester & BugHunter
 
 > Projeto criado com intuito de ajudar nos estudos de penteste.
 
+
+### Tools necessárias
+#### https://github.com/s0md3v/XSStrike
+#### https://github.com/projectdiscovery/nuclei
+#### https://github.com/projectdiscovery/nuclei-templates
+#### https://github.com/bp0lr/gauplus
+#### https://github.com/tomnomnom/qsreplace
+#### https://github.com/devanshbatham/ParamSpider
+#### https://github.com/commixproject/commix
+#### https://github.com/danielmiessler/SecLists
+#### https://github.com/maurosoria/dirsearch
+#### https://github.com/OJ/gobuster
+
 ### Ajustes e melhorias
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
