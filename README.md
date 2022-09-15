@@ -1,4 +1,4 @@
-# Sw1tchbl4d3
+# Sw1tchbl4d3 v.0.3
 
 Tool for Pentester & BugHunter
 
