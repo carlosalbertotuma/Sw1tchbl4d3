@@ -45,7 +45,7 @@ Para usar Bl4dHunt3r, siga estas etapas:
 
 ```
 Instale primeiro os pré requisitos.
-baixe o script e der permissão de execução: chmod +x parsh.sh
+baixe o script e der permissão de execução: chmod +x Sw1tchbl4d3-v.0.3.sh 
 execute como root: sudo ./Sw1tchbl4d3.sh 
 ```
 
