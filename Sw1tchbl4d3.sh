@@ -708,18 +708,7 @@ netbios1()
     smbclient -L //$ip/ -N  
     ;;
 
-    2)# Brute de compartilhamentos Host - null session
-    echo "Digite o IP alvo:"
-    read -e ip
-    for shares in $(cat $share); do	saida=$(smbclient -U '%' -N \\\\$ip\\$shares -c '')	if [[ -z $saida ]]; then
-                 	                   echo "E possivel null session em $shares"
-           		                   else
-                 		                echo $saida > /dev/null
-            		               fi
-    done 
-    ;;
-    
-	3)# Scan NetBios 
+    2)# Scan NetBios 
     echo "Digite a Rede:"
     read -e rede
 	nbtscan $rede
