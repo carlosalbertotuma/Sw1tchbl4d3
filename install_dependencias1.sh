@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Instalando dependencias do Sw1tchbl4d3 v3.0"
+echo "By bl4dsc4n"
+
 # Função para verificar e instalar uma ferramenta Go via git
 check_install_go_tool() {
     tool_name=$1
