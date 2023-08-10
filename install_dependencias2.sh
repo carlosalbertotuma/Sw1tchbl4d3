@@ -28,6 +28,7 @@ check_install_package gobuster gobuster
 check_install_package wpscan wpscan
 check_install_package sqlmap sqlmap
 check_install_package host dnsutils
+check_install_package dos2unix dos2unix
 check_install_package joomscan joomscan
 check_install_package wget wget
 check_install_package wget2 wget2
