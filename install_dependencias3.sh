@@ -55,5 +55,6 @@ else
     echo "ParamSpider já está instalado e configurado."
 fi
 sudo gzip -d /usr/share/wordlists/rockyou.txt.gz || sudo rm /usr/share/wordlists/rockyou.txt.gz
+dos2unix * .
 
 echo "Verificação e instalação concluídas."
