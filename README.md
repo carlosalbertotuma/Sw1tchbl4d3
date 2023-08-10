@@ -45,7 +45,12 @@ Para usar Bl4dHunt3r, siga estas etapas:
 
 ```
 Instale primeiro os pré requisitos.
-baixe o script e der permissão de execução: chmod +x Sw1tchbl4d3-v.0.3.sh 
+baixe o arquivo do git : git clone https://github.com/carlosalbertotuma/Sw1tchbl4d3.git
+entre na pasta : cd Sw1tchbl4d3
+de permissão aos arquivos : chmod +x *.sh
+
+Execute os Script de dependencia:  ./install_dependencia1.sh
+instale todos. 
 execute como root: sudo ./Sw1tchbl4d3.sh 
 ```
 
