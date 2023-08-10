@@ -54,5 +54,6 @@ if ! command -v paramspider &>/dev/null; then
 else
     echo "ParamSpider já está instalado e configurado."
 fi
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz || sudo rm /usr/share/wordlists/rockyou.txt.gz
 
 echo "Verificação e instalação concluídas."
