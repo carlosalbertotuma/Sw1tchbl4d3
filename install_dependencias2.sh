@@ -19,6 +19,7 @@ echo "Verificando e instalando ferramentas..."
 
 # Verificação e instalação das ferramentas
 check_install_package nmap nmap
+check_install_package seclists seclists
 check_install_package git git
 check_install_package gobuster gobuster
 check_install_package wpscan wpscan
