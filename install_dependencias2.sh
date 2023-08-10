@@ -9,6 +9,7 @@ check_install_package() {
         echo "Instalando $2..."
         sudo apt-get update
         sudo apt-get upgrade -y
+        sudo apt-get install kali-linux-default
         sudo apt-get install -y "$2" || echo "Falha ao instalar $2"
     else
         echo "$2 OK"
@@ -19,6 +20,7 @@ echo "Verificando e instalando ferramentas..."
 
 # Verificação e instalação das ferramentas
 check_install_package nmap nmap
+check_install_package dirb dirb
 check_install_package seclists seclists
 check_install_package git git
 check_install_package gobuster gobuster
