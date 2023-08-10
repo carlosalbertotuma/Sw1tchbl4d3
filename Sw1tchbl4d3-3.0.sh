@@ -1417,19 +1417,19 @@ bughunter()
     mkdir $dominio
     cd $dominio
     echo "Procurando Dominios e Subdominios"
-    subfinder -d $dominio -silent | httpx -silent | xargs -I@ findomain -t @ -q --pscan | tee -a domainTakeOver 
+    subfinder -d $dominio -silent | httpx -silent | xargs -I@ findomain -t @ -q --pscan | tee domainTakeOver 
     ex -s -c '%s/ //e|%s/]//e|x' domainTakeOver
     awk -F "," '{print $1}' domainTakeOver > dominios 
     awk -F "[" '{print $2}' domainTakeOver > portas
-    echo "gauplus";awk '{print $1}' dominios | gauplus -random-agent -t 25 -b ttf,woff,svg,png,jpg | tee -a links
-    echo "qsreplace";cat links | qsreplace | tee -a links2 
+    echo "gauplus";awk '{print $1}' dominios | gauplus -random-agent -t 25 -b ttf,woff,svg,png,jpg | tee links
+    echo "qsreplace";cat links | qsreplace | tee links2 
     echo "procurando js e json";awk '/\.js|\.json/ {print $1}' links2 > json_files 
-    echo "procurando paramentos";awk '/\=/ {print $1}' links2 | tee -a ssrf sqli xss lfi idor redirect rce
+    echo "procurando paramentos";awk '/\=/ {print $1}' links2 | tee ssrf sqli xss lfi idor redirect rce
     echo "MOdulo de Ataque com Nuclei";nuclei -update;nuclei -ut
-    nuclei -c 70 -severity critical,medium,high,low -l dominio | tee -a result-nuclei.txt
+    nuclei -c 70 -severity critical,medium,high,low -l dominios | tee result-nuclei.txt
     sleep 5
 	echo "Modulo de ataque com dalfox"
-	cat links2 | egrep "\=|\?|\/" | dalfox pipe -silent | tee -a result-dalfox.txt
+	cat links2 | egrep "\=|\?|\/" | dalfox pipe -silent | tee result-dalfox.txt
 }
 xsstrike1()
 {
