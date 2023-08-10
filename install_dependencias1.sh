@@ -28,7 +28,14 @@ check_install_go_tool nuclei github.com/projectdiscovery/nuclei
 check_install_go_tool dalfox github.com/hahwul/dalfox
 check_install_go_tool qsreplace github.com/tomnomnom/qsreplace@latest
 
-# Adicione outras ferramentas aqui, seguindo o mesmo padrão
+# Instalação do qsreplace
+if ! command -v qsreplace &>/dev/null; then
+    echo "Instalando qsreplace..."
+    go install github.com/tomnomnom/qsreplace@latest
+    cp /root/go/bin/qsreplace /usr/bin/
+else
+    echo "qsreplace OK"
+fi
 
 # Instalação do Findomain
 if ! command -v findomain &>/dev/null; then
