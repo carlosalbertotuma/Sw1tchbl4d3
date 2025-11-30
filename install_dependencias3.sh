@@ -60,4 +60,9 @@ fi
 echo ">>> Conversão dos scripts para Unix..."
 find . -type f -name "*.sh" -exec dos2unix {} \;
 
+echo ">>> Instalando npm / retire..."
+sudo apt install npm-y
+sudo npm install -g retire
+sudo retire
+
 echo ">>> Todas dependências instaladas."
