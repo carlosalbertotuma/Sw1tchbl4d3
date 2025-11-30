@@ -54,6 +54,52 @@ instale todos.
 execute como root: sudo ./Sw1tchbl4d3.sh 
 ```
 
+## Instalando dependencias
+
+<img width="666" height="201" alt="image" src="https://github.com/user-attachments/assets/4f8fd774-bbd4-4024-be30-d96640a94da3" />
+
+-
+
+<img width="1023" height="206" alt="image" src="https://github.com/user-attachments/assets/9d5cbf40-f048-4bc2-aa4b-1d1a45501e7f" />
+
+-
+
+<img width="992" height="87" alt="image" src="https://github.com/user-attachments/assets/70da78f7-7e0b-4a55-acf8-b2929c244c48" />
+
+-
+
+<img width="1081" height="511" alt="image" src="https://github.com/user-attachments/assets/26443d64-f676-4bcf-910b-0a032a4c0dbd" />
+
+-
+
+<img width="692" height="527" alt="image" src="https://github.com/user-attachments/assets/d0777fce-8835-49d3-841c-e513f3e1f506" />
+
+
+## Erro de CRLF
+
+<img width="705" height="92" alt="image" src="https://github.com/user-attachments/assets/6e8f665f-de9c-4750-a061-b82a495bdc26" />
+
+- Podemos verificar que não mostrar o caracter CRLF ao editar com nano ou vim
+
+<img width="812" height="185" alt="image" src="https://github.com/user-attachments/assets/2bff06c6-e32e-4f60-846c-b1b7e7a7d3df" />
+
+- Utilizando o head o CRLF é visualizado
+
+<img width="821" height="246" alt="image" src="https://github.com/user-attachments/assets/e4c9a7e5-393f-4aeb-8e46-78e8272adfd1" />
+
+- Para resolver precisa instalar o dos2unix para formatar ( sudo apt install dos2unix )
+
+<img width="577" height="91" alt="image" src="https://github.com/user-attachments/assets/ef75b1ab-39b6-4d6e-a43d-fd3735829bd4" />
+
+- resolvido podemos executar
+
+<img width="1011" height="640" alt="image" src="https://github.com/user-attachments/assets/8f934ae1-e5ac-48b6-824c-1b6156035d9d" />
+  
+- Podemos verificar o codigo que foi removido o caracter do CRLF
+
+<img width="822" height="245" alt="image" src="https://github.com/user-attachments/assets/c6b56f75-86c5-4ac9-bbc0-9900cfba1349" />
+
+
 ## 🤝 Colaboradores
 
 Agradecemos às seguintes pessoas que contribuíram para este projeto:
