@@ -75,6 +75,11 @@ execute como root: sudo ./Sw1tchbl4d3.sh
 <img width="692" height="527" alt="image" src="https://github.com/user-attachments/assets/d0777fce-8835-49d3-841c-e513f3e1f506" />
 
 
+## Testando dependencias
+
+<img width="672" height="768" alt="image" src="https://github.com/user-attachments/assets/546038e3-e25f-4208-bcc0-a7e9f70eebed" />
+
+
 ## Erro de CRLF
 
 <img width="705" height="92" alt="image" src="https://github.com/user-attachments/assets/6e8f665f-de9c-4750-a061-b82a495bdc26" />
