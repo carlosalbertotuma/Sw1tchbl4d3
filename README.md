@@ -62,9 +62,6 @@ execute como root: sudo ./Sw1tchbl4d3.sh
 
 <img width="1023" height="206" alt="image" src="https://github.com/user-attachments/assets/9d5cbf40-f048-4bc2-aa4b-1d1a45501e7f" />
 
--
-
-<img width="992" height="87" alt="image" src="https://github.com/user-attachments/assets/70da78f7-7e0b-4a55-acf8-b2929c244c48" />
 
 -
 
