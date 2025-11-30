@@ -3,61 +3,61 @@
 echo "Instalando dependencias do Sw1tchbl4d3 v3.0"
 echo "By bl4dsc4n"
 
-# Define o diretório de instalação
 install_dir="/usr/local"
 
-# Função para instalar e configurar uma ferramenta Python
 install_python_tool() {
     tool_name=$1
     tool_repo=$2
-    
-    echo "Baixando o repositório $tool_name..."
+
+    echo ">>> Instalando $tool_name..."
+    sudo rm -rf "$install_dir/$tool_name"
+    sudo rm -f "/usr/bin/$tool_name"
+
     git clone "$tool_repo" "$install_dir/$tool_name"
     cd "$install_dir/$tool_name"
 
-    echo "Configurando o acesso direto ao comando $tool_name..."
-    chmod +x "$tool_name.py"
-    sudo ln -s "$install_dir/$tool_name/$tool_name.py" /usr/bin/"$tool_name"
+    # XSStrike tem arquivo com nome minusculo
+    if [ -f "${tool_name,,}.py" ]; then
+        chmod +x "${tool_name,,}.py"
+        sudo ln -s "$install_dir/$tool_name/${tool_name,,}.py" "/usr/bin/${tool_name,,}"
+    fi
 
-    echo "$tool_name foi instalado e configurado com sucesso."
+    echo ">>> $tool_name instalado com sucesso."
 }
 
-echo "Verificando e instalando ferramentas..."
+echo ">>> Instalando XSStrike..."
+install_python_tool XSStrike https://github.com/s0md3v/XSStrike.git
 
-# Verifica e instala o XSStrike
-if ! command -v xsstrike &>/dev/null; then
-    install_python_tool XSStrike https://github.com/s0md3v/XSStrike.git
-else
-    echo "XSStrike já está instalado e configurado."
-fi
+echo ">>> Instalando Commix..."
+install_python_tool commix https://github.com/commixproject/commix.git
 
-# Verifica e instala o Commix
-if ! command -v commix &>/dev/null; then
-    install_python_tool commix https://github.com/commixproject/commix.git
-else
-    echo "Commix já está instalado e configurado."
-fi
+echo ">>> Instalando ParamSpider..."
+sudo rm -rf "$install_dir/ParamSpider"
+sudo rm -f /usr/bin/paramspider
 
-# Verifica e instala o ParamSpider
-if ! command -v paramspider &>/dev/null; then
-    echo "Baixando e instalando ParamSpider..."
-    git clone https://github.com/devanshbatham/ParamSpider.git "$install_dir/ParamSpider"
-    cd "$install_dir/ParamSpider"
+git clone https://github.com/devanshbatham/ParamSpider.git "$install_dir/ParamSpider"
+cd "$install_dir/ParamSpider"
 
-    echo "Criando ambiente virtual e instalando dependências..."
-    python3 -m venv venv
-    source venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
+
+if [ -f requirements.txt ]; then
     pip install -r requirements.txt
-
-    echo "Configurando o acesso direto ao comando paramspider..."
-    chmod +x paramspider.py
-    sudo ln -s "$install_dir/ParamSpider/paramspider.py" /usr/bin/paramspider
-
-    echo "ParamSpider foi instalado e configurado com sucesso."
 else
-    echo "ParamSpider já está instalado e configurado."
+    echo "[ERRO] requirements.txt não encontrado!"
 fi
-sudo gzip -d /usr/share/wordlists/rockyou.txt.gz || sudo rm /usr/share/wordlists/rockyou.txt.gz
-dos2unix *.sh .
 
-echo "Verificação e instalação concluídas."
+chmod +x paramspider.py
+sudo ln -s "$install_dir/ParamSpider/paramspider.py" /usr/bin/paramspider
+
+echo ">>> ParamSpider instalado com sucesso."
+
+# rockyou
+if [ -f "/usr/share/wordlists/rockyou.txt.gz" ]; then
+    sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+fi
+
+echo ">>> Conversão dos scripts para Unix..."
+find . -type f -name "*.sh" -exec dos2unix {} \;
+
+echo ">>> Todas dependências instaladas."
